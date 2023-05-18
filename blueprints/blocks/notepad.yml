@@ -1,0 +1,9 @@
+name: Notepad
+
+icon: pen
+preview: text
+wysiwyg: true
+
+fields:
+  text:
+    type: writer

@@ -1,0 +1,62 @@
+:root {
+  --notepad-border-color: tomato;
+  --notepad-border-size: 3px;
+  --notepad-line-color: lightblue;
+  --notepad-line-size: 2px;
+  --notepad-spacing: 30px;
+}
+
+.notepad-inner {
+  background: linear-gradient(transparent, transparent calc(var(--notepad-spacing) - var(--notepad-line-size)), var(--notepad-line-color) calc(var(--notepad-spacing) - var(--notepad-line-size)));
+  background-size: var(--notepad-spacing) var(--notepad-spacing);
+  font-family: monospace;
+  font-size: 1.25rem;
+  height: inherit;
+  line-height: 1.5;
+  padding: var(--notepad-spacing);
+}
+
+.notepad-inner li + li {
+  margin-top: 0;
+}
+
+.notepad-inner li p {
+  margin-bottom: 0;
+}
+
+.notepad-inner p {
+  margin-bottom: 1.85rem;
+}
+
+.notepad-inner ul {
+  margin-bottom: 1.85rem;
+  margin-top: 1.85rem;
+}
+
+.notepad-outer:before {
+  border-right: var(--notepad-border-size) solid var(--notepad-border-color);
+  bottom: 0;
+  content: "";
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: calc(var(--notepad-spacing) * 0.667);
+}
+
+.notepad-outer {
+  background: var(--color-light);
+  border-radius: 0.25rem;
+  box-shadow: 0 0.5em 1em -0.125em rgba(10, 10, 10, 0.1), 0 0 0 1px rgba(10, 10, 10, 0.02);
+  height: inherit;
+  position: relative;
+}
+
+@media (min-width: 769px) {
+  .notepad-inner {
+    padding: var(--notepad-spacing) calc(var(--notepad-spacing) * 1.667);
+  }
+
+  .notepad-outer:before {
+    width: calc(var(--notepad-spacing) * 1.333);
+  }
+}
